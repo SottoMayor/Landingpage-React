@@ -1,10 +1,15 @@
 import './App.css';
+
 import Auxiliary from './hoc/Auxiliary';
+
+import Layout from './container/Layout';
 
 function App() {
   return (
     <Auxiliary>
-      <h1>Olá mundo!</h1>
+      
+      <Layout/>
+
     </Auxiliary>
   );
 }
