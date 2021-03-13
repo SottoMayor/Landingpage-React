@@ -9,7 +9,7 @@ const header = () => (
     <header className={classes.Header}>
 
         <figure>
-            <img src={Logo}/>
+            <img src={Logo} alt="Logo"/>
         </figure>
 
     </header>

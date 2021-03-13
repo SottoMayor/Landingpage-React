@@ -1,0 +1,8 @@
+.Board{
+    box-sizing: border-box;
+    padding: 35px 30px;
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    background-color: rgba(33, 35, 67, 0.75);
+}

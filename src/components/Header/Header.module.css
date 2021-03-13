@@ -3,7 +3,7 @@
     height: 75px;
     background-color: #212343;
     box-sizing: border-box;
-    padding: 2%;
+    padding: 0 3%;
     display: flex;
     align-items: center;
 }
