@@ -4,6 +4,8 @@ import Auxiliary from '../hoc/Auxiliary';
 
 import Header from '../components/Header/Header';
 
+import Banner from '../components/Banner/Banner';
+
 class Layout extends Component{
 
     //handlig some state!
@@ -13,6 +15,8 @@ class Layout extends Component{
             <Auxiliary>
 
                 <Header/>
+
+                <Banner/>
 
                 <div>Banner - ContainerList e Formuário</div>
 
