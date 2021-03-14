@@ -1,0 +1,22 @@
+.BoxItems{
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px calc(2% + 5px);
+}
+
+.BoxItems img{
+    width: 65px;
+    height: 65px;
+    margin-bottom: 15px;
+}
+
+.BoxItems h2{
+    font-size: 23px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.BoxItems p{
+    font-size: 18px;
+    text-align: justify;
+}

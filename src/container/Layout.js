@@ -8,6 +8,8 @@ import Banner from '../components/Banner/Banner';
 
 import ContainerUp from '../components/ContainerUp/ContainerUp';
 
+import ContainerDown from '../components/ContainerDown/ContainerDown';
+
 class Layout extends Component{
 
     //handlig some state!
@@ -22,7 +24,7 @@ class Layout extends Component{
 
                 <ContainerUp/>
 
-                <div>container2 - título e boxes</div>
+                <ContainerDown/>
 
                 <div>Footer - Linha, cabeçalho e paragrafo</div>
             </Auxiliary>
