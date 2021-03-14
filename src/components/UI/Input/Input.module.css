@@ -1,0 +1,20 @@
+.Input{
+    margin: 15px 0;
+}
+
+.Input label{
+    font-size: 18px;
+}
+
+.Input input{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    border: 1px solid lightgray;
+    border-bottom: 2px solid rgb(207, 205, 205);
+    border-left: 2px solid rgb(207, 205, 205);
+    box-sizing: border-box;
+    padding: 15px 10px;
+    font-size: 18px;
+    outline: 0;
+}

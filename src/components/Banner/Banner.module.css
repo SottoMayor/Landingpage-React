@@ -20,9 +20,18 @@
     margin-bottom: 15px;
     font-size: 18px;
 }
+
 .Banner .WSContainer{
-    width: 460px;
+    width: 450px;
     height: calc(100% + 30px);
     outline: 10px solid rgba(153, 153, 153, 0.65);
-    color: black
+    color: rgb(114, 114, 114);
+}
+
+.Banner .WSContainer h2{
+    font-weight: 200;
+    margin-bottom: 30px;
+}
+.Banner .WSContainer p{
+    margin-bottom: 15px;
 }
