@@ -10,6 +10,8 @@ import ContainerUp from '../components/ContainerUp/ContainerUp';
 
 import ContainerDown from '../components/ContainerDown/ContainerDown';
 
+import Footer from '../components/Footer/Footer';
+
 class Layout extends Component{
 
     //handlig some state!
@@ -26,7 +28,8 @@ class Layout extends Component{
 
                 <ContainerDown/>
 
-                <div>Footer - Linha, cabeçalho e paragrafo</div>
+                <Footer/>
+
             </Auxiliary>
         )
     }

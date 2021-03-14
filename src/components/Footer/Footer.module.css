@@ -1,0 +1,22 @@
+.Footer{
+    padding: 30px 2%;
+    box-sizing: border-box;
+}
+
+.Footer .Line{
+    height: 4px;
+    width: 100%;
+    background-color: rgba(153, 153, 153, 0.65);
+}
+
+.Footer .Center{
+    padding-top: 30px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.Footer p{
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: rgb(114, 114, 114);
+}
