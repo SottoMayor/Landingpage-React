@@ -1,0 +1,28 @@
+.ContainerUp{
+    background-color: rgb(223, 221, 221);
+    box-sizing: border-box;
+    padding: 45px 2%;
+    text-align: center;
+    width: 100%;
+}
+
+.ContainerUp p{
+    max-width: 560px;
+    text-align: justify;
+    margin: 0 auto;
+    font-size: 18px;
+}
+
+.ContainerUp figure{
+    position: relative;
+}
+
+.ContainerUp img{
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: 22.5px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+}

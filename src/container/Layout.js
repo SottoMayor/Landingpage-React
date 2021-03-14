@@ -6,6 +6,8 @@ import Header from '../components/Header/Header';
 
 import Banner from '../components/Banner/Banner';
 
+import ContainerUp from '../components/ContainerUp/ContainerUp';
+
 class Layout extends Component{
 
     //handlig some state!
@@ -18,9 +20,7 @@ class Layout extends Component{
 
                 <Banner/>
 
-                <div>Banner - ContainerList e Formuário</div>
-
-                <div>container1 - Block text e arrow</div>
+                <ContainerUp/>
 
                 <div>container2 - título e boxes</div>
 

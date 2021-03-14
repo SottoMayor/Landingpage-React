@@ -1,0 +1,17 @@
+.CustomHeader{
+    border-left: 5px solid #212343 ;
+    border-bottom: 5px solid #212343 ;
+    border-radius: 5px;
+    background-color: rgba(white, white, white, 0.45);
+    max-width: 250px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 45px;
+}
+
+.CustomHeader h2{
+    font-size: 27px;
+    box-sizing: border-box;
+    padding: 10px;
+}
