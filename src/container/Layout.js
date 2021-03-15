@@ -12,17 +12,32 @@ import ContainerDown from '../components/ContainerDown/ContainerDown';
 
 import Footer from '../components/Footer/Footer';
 
+import Modal from '../components/UI/Modal/Modal';
+
 class Layout extends Component{
 
-    //handlig some state!
+    state={
+        checkingData: false
+    }
+
+    checkingDataHandler = () => {
+        let copyState = {...this.state}
+        
+        this.setState({checkingData: !copyState.checkingData})
+    }
 
     render(){
         return(
             <Auxiliary>
 
+                <Modal show={this.state.checkingData} 
+                modalClosed={this.checkingDataHandler}>
+                    kkkk Eae
+                </Modal>
+
                 <Header/>
 
-                <Banner/>
+                <Banner checking={this.checkingDataHandler} />
 
                 <ContainerUp/>
 

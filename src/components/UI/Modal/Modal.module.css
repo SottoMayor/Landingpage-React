@@ -1,0 +1,20 @@
+.Modal{
+    position: fixed;
+    left: 50%;
+    top: 40%;
+    z-index: 500;
+    background: linear-gradient(#aaa, #ccc);
+    width: 70%;
+    border: 1px solid lightgray;
+    box-shadow: 2px 2px 6px black;
+    padding: 16px;
+    box-sizing: border-box;
+    transition: all 0.4s linear;
+}
+
+@media screen and (min-width: 600px){
+    .Modal{
+        width: 500px;
+        left: calc(50% - 250px);
+    }
+}

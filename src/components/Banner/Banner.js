@@ -10,7 +10,7 @@ import Input from '../UI/Input/Input';
 
 import Button from '../UI/Button/Button';
 
-const Banner = () => {
+const Banner = (props) => {
 
     const boardContent = [
         {text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', id: 1 },
@@ -56,7 +56,7 @@ const Banner = () => {
 
                         <p>*Campos Obrigatórios</p>
 
-                        <Button>Enviar</Button>
+                        <Button clicked={props.checking}>Enviar</Button>
 
                     </WhiteScreen>
 
