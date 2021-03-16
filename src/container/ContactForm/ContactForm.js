@@ -8,6 +8,11 @@ import Button from '../../components/UI/Button/Button';
 
 import Auxiliary from '../../hoc/Auxiliary';
 
+
+import Modal from '../../components/UI/Modal/Modal';
+
+import ContactData from '../../components/ContactData/ContactData';
+
 class ContactForm extends Component {
 
     state = {
@@ -27,8 +32,17 @@ class ContactForm extends Component {
                 inputType: 'text',
                 value: '' 
             }
-        }
+        },
+        checkingData: false
     }
+
+
+    checkingDataHandler = () => {
+        let copyState = {...this.state}
+        
+        this.setState({checkingData: !copyState.checkingData})
+    }
+
 
     updateValueHandler = (event, idIdentifier) => {
         const updatedInputFields = {...this.state.inputFields};
@@ -39,7 +53,6 @@ class ContactForm extends Component {
         updatedInputFields[idIdentifier] = fieldSelector;
 
         this.setState({inputFields: updatedInputFields})
-
     }
 
     render() {
@@ -49,9 +62,19 @@ class ContactForm extends Component {
             itemsArray.push(item)
         }
 
+        console.log('[ContactForm] Updating ')
+
         return (
             
                 <Auxiliary>
+
+                    <Modal show={this.state.checkingData}
+                    modalClosed={this.checkingDataHandler}>
+                        <ContactData 
+                        modalClosed={this.checkingDataHandler}
+                        {...this.state.inputFields} 
+                        />
+                    </Modal>
 
                     <WhiteScreen>
                         
@@ -68,7 +91,7 @@ class ContactForm extends Component {
 
                         <p>*Campos Obrigatórios</p>
 
-                        <Button clicked={this.props.checking}>Enviar</Button>
+                        <Button clicked={this.checkingDataHandler}>Enviar</Button>
 
                     </WhiteScreen>
 

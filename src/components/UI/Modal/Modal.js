@@ -7,6 +7,9 @@ import Auxiliary from '../../../hoc/Auxiliary';
 import Backdrop from '../../UI/Backdrop/Backdrop'
 
 const Modal = (props) => {
+
+    console.log('[Modal] Updating ')
+
     return (
         <Auxiliary>
             <Backdrop show={props.show} clicked={props.modalClosed}/>
