@@ -1,0 +1,32 @@
+.ContactData{
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+.ContactData ul{
+    width: 250px;
+    text-align: left;
+    margin: -10px auto;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.ContactData ul li{
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+.ContactData ul i{
+    font-size: 16px;
+}
+
+.ContactData ul span{
+    font-size: 18px;
+    margin-left: 2px;
+}
+
+.ContactData .ButtonContainer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}

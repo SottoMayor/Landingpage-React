@@ -14,6 +14,8 @@ import Footer from '../components/Footer/Footer';
 
 import Modal from '../components/UI/Modal/Modal';
 
+import ContactData from '../components/ContactData/ContactData';
+
 class Layout extends Component{
 
     state={
@@ -32,7 +34,7 @@ class Layout extends Component{
 
                 <Modal show={this.state.checkingData} 
                 modalClosed={this.checkingDataHandler}>
-                    kkkk Eae
+                    <ContactData modalClosed={this.checkingDataHandler}/>
                 </Modal>
 
                 <Header/>
