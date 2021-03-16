@@ -19,13 +19,13 @@ const ContactData = (props) => {
 
                <ul>
                    <li>
-                        <i class="fas fa-thumbtack"></i> <span>Nome: Fulano</span>
+                        <i className="fas fa-thumbtack"></i> <span>Nome: Fulano</span>
                    </li>
                    <li>
-                        <i class="fas fa-thumbtack"></i> <span>Email: teste@teste.com</span>
+                        <i className="fas fa-thumbtack"></i> <span>Email: teste@teste.com</span>
                    </li>
                    <li>
-                        <i class="fas fa-thumbtack"></i> <span>Telefone: (99) 99999-9999</span>
+                        <i className="fas fa-thumbtack"></i> <span>Telefone: (99) 99999-9999</span>
                    </li>
                </ul>
 
