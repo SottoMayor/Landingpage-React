@@ -3,8 +3,6 @@ import React from 'react';
 
 const Input = (props) => {
 
-    //Change defaultValue per value and onChange
-
     return (
         <div className={classes.Input}>
             
@@ -12,7 +10,7 @@ const Input = (props) => {
                 {props.inputName}*
             </label>
 
-            <input type={props.inputType} defaultValue={props.value}  />
+            <input type={props.inputType} value={props.value} onChange={props.changed} />
 
         </div>
     )

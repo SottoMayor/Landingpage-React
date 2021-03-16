@@ -11,29 +11,41 @@ import Auxiliary from '../../hoc/Auxiliary';
 class ContactForm extends Component {
 
     state = {
-        name: {
-            inputName: 'Nome',
-            inputType: 'text',
-            value: ''
-        },
-        email: {
-            inputName: 'Email', 
-            inputType: 'email',
-            value: ''
-        },
-        phone: {
-            inputName: 'Telefone', 
-            inputType: 'text',
-            value: '' 
+        inputFields:{
+            name: {
+                inputName: 'Nome',
+                inputType: 'text',
+                value: ''
+            },
+            email: {
+                inputName: 'Email', 
+                inputType: 'email',
+                value: ''
+            },
+            phone: {
+                inputName: 'Telefone', 
+                inputType: 'text',
+                value: '' 
+            }
         }
     }
 
-    //updateValueHandler
+    updateValueHandler = (event, idIdentifier) => {
+        const updatedInputFields = {...this.state.inputFields};
+        const fieldSelector = {...updatedInputFields[idIdentifier]}
+
+        fieldSelector.value = event.target.value;
+
+        updatedInputFields[idIdentifier] = fieldSelector;
+
+        this.setState({inputFields: updatedInputFields})
+
+    }
 
     render() {
 
         let itemsArray = [];
-        for(let item in this.state){
+        for(let item in this.state.inputFields){
             itemsArray.push(item)
         }
 
@@ -50,7 +62,7 @@ class ContactForm extends Component {
 
                         {   
                             itemsArray.map(item => (
-                                <Input {...this.state[item]} key={item}/>
+                                <Input {...this.state.inputFields[item]} key={item} changed={(event) => this.updateValueHandler(event, item)}/>
                             ))
                         }
 
