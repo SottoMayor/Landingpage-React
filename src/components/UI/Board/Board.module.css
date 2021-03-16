@@ -6,3 +6,11 @@
     height: auto;
     background-color: rgba(33, 35, 67, 0.75);
 }
+
+@media screen and (max-width: 1100px){
+
+    .Board{
+        margin: 30px 0;
+    }
+
+}

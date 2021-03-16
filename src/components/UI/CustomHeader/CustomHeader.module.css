@@ -16,3 +16,26 @@
     box-sizing: border-box;
     padding: 10px;
 }
+
+@media screen and (max-width: 768px){
+    .CustomHeader{
+        border-left: 3px solid #212343 ;
+        border-bottom: 3px solid #212343 ;
+        border-radius: 3px;
+        max-width: 250px;
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        margin-bottom: 45px;
+        line-height: 30px;
+    }
+    
+    .CustomHeader h2{
+        font-size: 24px;
+        box-sizing: border-box;
+        padding: 8px;
+        margin-bottom: 0 !important;
+        color: black;
+        font-weight: 600 !important;
+    }
+}

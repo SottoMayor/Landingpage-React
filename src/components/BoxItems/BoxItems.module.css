@@ -11,7 +11,7 @@
 }
 
 .BoxItems h2{
-    font-size: 23px;
+    font-size: 27px;
     font-weight: 400;
     margin-bottom: 15px;
 }
@@ -19,4 +19,30 @@
 .BoxItems p{
     font-size: 18px;
     text-align: justify;
+}
+
+@media screen and (max-width: 998px){
+    
+    .BoxItems{
+        margin-bottom: 15px;
+    }
+    
+}
+
+
+@media screen and (max-width: 768px){
+    .BoxItems img{
+        width: 45px;
+        height: 45px;
+        margin-bottom: 10px;
+    }
+    
+    .BoxItems h2{
+        font-size: 23px;
+        margin-bottom: 10px;
+    }
+    
+    .BoxItems p{
+        font-size: 16px;
+    }
 }

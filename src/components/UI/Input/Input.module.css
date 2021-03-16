@@ -18,3 +18,19 @@
     font-size: 18px;
     outline: 0;
 }
+
+@media screen and (max-width: 768px){
+
+    .Input{
+        margin: 12px 0;
+    }
+    
+    .Input label{
+        font-size: 16px;
+    }
+    
+    .Input input{
+        font-size: 16px;
+    }
+
+}

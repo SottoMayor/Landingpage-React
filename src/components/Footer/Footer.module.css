@@ -20,3 +20,27 @@
     font-size: 16px;
     color: rgb(114, 114, 114);
 }
+
+@media screen and (max-width: 768px){
+
+    .Footer{
+        padding: 30px calc(2% + 5px);
+        box-sizing: border-box;
+    }
+    
+    .Footer .Line{
+        height: 2px;
+    }
+    
+    .Footer .Center{
+        padding-top: 20px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    
+    .Footer p{
+        margin-bottom: 8px;
+        font-size: 14px;
+    }
+
+}

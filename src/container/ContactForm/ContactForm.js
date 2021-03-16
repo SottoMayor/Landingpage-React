@@ -13,6 +13,8 @@ import Modal from '../../components/UI/Modal/Modal';
 
 import ContactData from '../../components/ContactData/ContactData';
 
+import classes from './ContactForm.module.css';
+
 class ContactForm extends Component {
 
     state = {
@@ -70,7 +72,7 @@ class ContactForm extends Component {
 
                     <Modal show={this.state.checkingData}
                     modalClosed={this.checkingDataHandler}>
-                        <ContactData 
+                        <ContactData
                         modalClosed={this.checkingDataHandler}
                         {...this.state.inputFields} 
                         />
@@ -78,7 +80,7 @@ class ContactForm extends Component {
 
                     <WhiteScreen>
                         
-                        <h2>
+                        <h2 className={classes.Header}>
                             Preencha o formulário e inicie sua caminhada
                             para virar um webmaster!
                         </h2>
@@ -89,7 +91,7 @@ class ContactForm extends Component {
                             ))
                         }
 
-                        <p>*Campos Obrigatórios</p>
+                        <p className={classes.Paragraph}>*Campos Obrigatórios</p>
 
                         <Button clicked={this.checkingDataHandler}>Enviar</Button>
 

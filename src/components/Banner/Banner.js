@@ -23,7 +23,7 @@ const Banner = (props) => {
                     <ul>
                         {
                             boardContent.map(item => (
-                                <li key={item.id}> {item.text} </li>
+                                <li key={item.id}> <i className="fas fa-lightbulb"></i> {item.text} </li>
                             ))
                         }
                     </ul>
