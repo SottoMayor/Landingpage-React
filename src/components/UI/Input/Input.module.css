@@ -17,6 +17,12 @@
     padding: 15px 10px;
     font-size: 18px;
     outline: 0;
+    background-color: white;
+}
+
+.Invalid{
+    background-color: rgba(133, 81, 81, 0.836) !important;
+    border: 1px solid crimson !important;
 }
 
 @media screen and (max-width: 768px){

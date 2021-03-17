@@ -25,12 +25,12 @@ class ContactForm extends Component {
                 value: '',
                 validation: {
                     valid: false,
+                    touched: false,
                     required: true,
                     minLength: {
-                        value: 3,
-                        message: 'O nome deve conter pelo menos 3 caracteres.'
+                        value: 3
                     },
-                    defaultMessage: 'Esse campo é obrigatório!'
+                    message: 'O nome deve conter pelo menos 3 caracteres.'
                 }
             },
             email: {
@@ -39,12 +39,12 @@ class ContactForm extends Component {
                 value: '',
                 validation: {
                     valid: false,
+                    touched: false,
                     required: true,
                     minLength: {
-                        value: 8,
-                        message: 'O email inserido deve conter pelo menos 8 caracteres.'
+                        value: 8
                     },
-                    defaultMessage: 'Esse campo é obrigatório!'
+                    message: 'O email inserido deve conter pelo menos 8 caracteres.'
                 }
             },
             phone: {
@@ -53,16 +53,18 @@ class ContactForm extends Component {
                 value: '',
                 validation: {
                     valid: false,
+                    touched: false,
                     required: true,
                     minLength: {
-                        value: 11,
-                        message: 'Sua mensagem deve conter pelo menos 11 caracteres.'
+                        value: 11
                     },
                     maxLength: {
-                        value: 20,
-                        message: 'Sua mensagem deve conter no máximo 20 caracteres.'
+                        value: 20
                     },
-                    defaultMessage: 'Esse campo é obrigatório!'
+                    isNumber:{
+                        value: 'Is this a number?'
+                    },
+                    message: 'Não escreva caracteres especiais (-, (), *, ...) no número inserido ou digite um número válido entre 11 e 20 caracteres.'
                 }
             }
         },
@@ -92,6 +94,11 @@ class ContactForm extends Component {
             isValid = rules.maxLength.value >= value.length && isValid;
         }
 
+        if(rules.isNumber){
+            isValid = +value && isValid;
+            console.log('isNumber: ', isValid)
+        }
+
         return isValid;
 
     }
@@ -102,6 +109,7 @@ class ContactForm extends Component {
 
         fieldSelector.value = event.target.value;
         fieldSelector.validation.valid = this.checkValidity(fieldSelector.value, fieldSelector.validation)
+        fieldSelector.validation.touched = true;
 
         updatedInputFields[idIdentifier] = fieldSelector;
 
