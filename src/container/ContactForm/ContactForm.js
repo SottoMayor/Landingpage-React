@@ -22,17 +22,48 @@ class ContactForm extends Component {
             name: {
                 inputName: 'Nome',
                 inputType: 'text',
-                value: ''
+                value: '',
+                validation: {
+                    valid: false,
+                    required: true,
+                    minLength: {
+                        value: 3,
+                        message: 'O nome deve conter pelo menos 3 caracteres.'
+                    },
+                    defaultMessage: 'Esse campo é obrigatório!'
+                }
             },
             email: {
                 inputName: 'Email', 
                 inputType: 'email',
-                value: ''
+                value: '',
+                validation: {
+                    valid: false,
+                    required: true,
+                    minLength: {
+                        value: 8,
+                        message: 'O email inserido deve conter pelo menos 8 caracteres.'
+                    },
+                    defaultMessage: 'Esse campo é obrigatório!'
+                }
             },
             phone: {
                 inputName: 'Telefone', 
                 inputType: 'text',
-                value: '' 
+                value: '',
+                validation: {
+                    valid: false,
+                    required: true,
+                    minLength: {
+                        value: 11,
+                        message: 'Sua mensagem deve conter pelo menos 11 caracteres.'
+                    },
+                    maxLength: {
+                        value: 20,
+                        message: 'Sua mensagem deve conter no máximo 20 caracteres.'
+                    },
+                    defaultMessage: 'Esse campo é obrigatório!'
+                }
             }
         },
         checkingData: false
@@ -45,14 +76,36 @@ class ContactForm extends Component {
         this.setState({checkingData: !copyState.checkingData})
     }
 
+    checkValidity = (value, rules) => {
+
+        let isValid = true;
+
+        if(rules.required){
+            isValid = value.trim() !== '' && isValid;
+        }
+
+        if(rules.minLength){
+            isValid = rules.minLength.value <= value.length && isValid;
+        }
+
+        if(rules.maxLength){
+            isValid = rules.maxLength.value >= value.length && isValid;
+        }
+
+        return isValid;
+
+    }
 
     updateValueHandler = (event, idIdentifier) => {
         const updatedInputFields = {...this.state.inputFields};
         const fieldSelector = {...updatedInputFields[idIdentifier]}
 
         fieldSelector.value = event.target.value;
+        fieldSelector.validation.valid = this.checkValidity(fieldSelector.value, fieldSelector.validation)
 
         updatedInputFields[idIdentifier] = fieldSelector;
+
+        console.log(updatedInputFields)
 
         this.setState({inputFields: updatedInputFields})
     }
