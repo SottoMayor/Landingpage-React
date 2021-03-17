@@ -24,13 +24,13 @@ const ContactData = (props) => {
 
                <ul>
                    <li>
-                        <i className="fas fa-thumbtack"></i> <span>Nome: {props.name.value}</span>
+                        <i className="fas fa-thumbtack"></i> <span> <strong>Nome</strong>: {props.name.value}</span>
                    </li>
                    <li>
-                        <i className="fas fa-thumbtack"></i> <span>Email: {props.email.value}</span>
+                        <i className="fas fa-thumbtack"></i> <span> <strong>Email</strong>: {props.email.value}</span>
                    </li>
                    <li>
-                        <i className="fas fa-thumbtack"></i> <span>Telefone: {props.phone.value}</span>
+                        <i className="fas fa-thumbtack"></i> <span> <strong>Telefone</strong>: {props.phone.value}</span>
                    </li>
                </ul>
 

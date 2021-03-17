@@ -2,7 +2,7 @@ import './App.css';
 
 import Auxiliary from './hoc/Auxiliary';
 
-import Layout from './container/Layout';
+import Layout from './hoc/Layout';
 
 function App() {
   return (
