@@ -10,13 +10,16 @@ const Button = (props) => {
         buttonStyles.push(classes.Success)
     }else if(props.danger){
         buttonStyles.push(classes.Danger)
+    }
+    else if(props.disabled){
+            buttonStyles.push(classes.Disabled)
     }else{
         buttonStyles.push(classes.Info)
     }
 
     return (
         <div className={classes.ButtonContainer} onClick={props.clicked}>
-            <button className={buttonStyles.join(' ')}>
+            <button className={buttonStyles.join(' ')} disabled={props.disabled}>
                 {props.children}
             </button>
         </div>

@@ -68,7 +68,8 @@ class ContactForm extends Component {
                 }
             }
         },
-        checkingData: false
+        checkingData: false,
+        formIsValid: false
     }
 
 
@@ -96,7 +97,6 @@ class ContactForm extends Component {
 
         if(rules.isNumber){
             isValid = +value && isValid;
-            console.log('isNumber: ', isValid)
         }
 
         return isValid;
@@ -113,9 +113,16 @@ class ContactForm extends Component {
 
         updatedInputFields[idIdentifier] = fieldSelector;
 
-        console.log(updatedInputFields)
+        let formIsValid = true;
+        for(let key in updatedInputFields){
+            formIsValid = updatedInputFields[key]
+                        .validation.valid && formIsValid
+        }
 
-        this.setState({inputFields: updatedInputFields})
+        this.setState({
+            inputFields: updatedInputFields,
+            formIsValid: formIsValid
+        })
     }
 
     render() {
@@ -154,7 +161,8 @@ class ContactForm extends Component {
 
                         <p className={classes.Paragraph}>*Campos Obrigatórios</p>
 
-                        <Button clicked={this.checkingDataHandler}>Enviar</Button>
+                        <Button clicked={this.checkingDataHandler}
+                        disabled={!(this.state.formIsValid) ? true : false}>Enviar</Button>
 
                     </WhiteScreen>
 

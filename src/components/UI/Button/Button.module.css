@@ -51,6 +51,12 @@
     border-bottom: 0px solid rgb(33, 35, 67);
 }
 
+.Disabled{
+    background-color: #ccc;
+    border: #aaa;
+    cursor: not-allowed;
+}
+
 @media screen and (max-width: 768px){
     .ButtonContainer{
         margin-top: 20px;
