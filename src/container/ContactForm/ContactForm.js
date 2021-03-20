@@ -124,6 +124,7 @@ class ContactForm extends Component {
             formIsValid: formIsValid
         })
     }
+    
 
     render() {
 
@@ -131,8 +132,6 @@ class ContactForm extends Component {
         for(let item in this.state.inputFields){
             itemsArray.push(item)
         }
-
-        console.log('[ContactForm] Updating ')
 
         return (
             
