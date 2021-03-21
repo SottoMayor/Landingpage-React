@@ -16,7 +16,9 @@ import classes from './ContactForm.module.css';
 
 import Spinner from '../../components/UI/Spinner/Spinner';
 
-import axios from '../../hoc/axios-instace';
+import withErrorHandling from '../../hoc/withErrorHandling';
+
+import axios from '../../axios-instace';
 
 class ContactForm extends Component {
 
@@ -73,7 +75,8 @@ class ContactForm extends Component {
         },
         checkingData: false,
         formIsValid: false,
-        loading: false
+        loading: false,
+        sent: false
     }
 
 
@@ -138,6 +141,21 @@ class ContactForm extends Component {
         axios.post('/', send)
         .then(response => {
             console.log(response.data)
+
+            this.setState({
+                loading: false,
+                sent: true
+            })
+
+            setTimeout(() => {
+                this.setState({
+                    sent: false,
+                    checkingData: false
+                })
+            }, 6500);
+            
+        })
+        .catch( err => {
             this.setState({
                 loading: false,
                 checkingData: false
@@ -162,6 +180,13 @@ class ContactForm extends Component {
         )
         if(this.state.loading){
             modalContent = <Spinner/>
+        }
+        if(this.state.sent){
+            modalContent = (
+            <WhiteScreen>
+                <h3 style={{color: 'rgb(4, 99, 4)', padding: '40px'}}>Dados enviados com sucesso! Em breve entraremos em contato.</h3>
+            </WhiteScreen>
+            )
         }
 
         return (
@@ -200,4 +225,4 @@ class ContactForm extends Component {
     }
 }
 
-export default ContactForm
+export default withErrorHandling(ContactForm, axios);
