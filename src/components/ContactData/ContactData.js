@@ -24,7 +24,7 @@ const ContactData = (props) => {
                     {
                         Object.keys(props).map(item => {
                             if (!props[item].inputName){
-                                return;
+                                return null;
                             }
                             return  (<li key={item}>
                                         <i className="fas fa-thumbtack"></i> <span> <strong>{props[item].inputName}</strong>: {props[item].value}</span>
@@ -37,7 +37,7 @@ const ContactData = (props) => {
 
             <div className={classes.ButtonContainer}>
                 <Button danger clicked={props.modalClosed}>Cancelar</Button>
-                <Button success>Continuar</Button>
+                <Button  clicked={props.checkContinue}>Continuar</Button>
             </div>
             
 

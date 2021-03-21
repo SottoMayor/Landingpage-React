@@ -8,12 +8,13 @@ import Button from '../../components/UI/Button/Button';
 
 import Auxiliary from '../../hoc/Auxiliary';
 
-
 import Modal from '../../components/UI/Modal/Modal';
 
 import ContactData from '../../components/ContactData/ContactData';
 
 import classes from './ContactForm.module.css';
+
+import axios from '../../hoc/axios-instace';
 
 class ContactForm extends Component {
 
@@ -124,6 +125,16 @@ class ContactForm extends Component {
             formIsValid: formIsValid
         })
     }
+
+    checkContinueHandler = () => {
+
+        let send = {...this.state.inputFields}
+
+        axios.post('/', send)
+        .then(response => {
+            console.log(response.data)
+        })
+    }
     
 
     render() {
@@ -141,6 +152,7 @@ class ContactForm extends Component {
                     modalClosed={this.checkingDataHandler}>
                         <ContactData
                         modalClosed={this.checkingDataHandler}
+                        checkContinue={this.checkContinueHandler}
                         {...this.state.inputFields} 
                         />
                     </Modal>
