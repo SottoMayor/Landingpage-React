@@ -14,6 +14,8 @@ import ContactData from '../../components/ContactData/ContactData';
 
 import classes from './ContactForm.module.css';
 
+import Spinner from '../../components/UI/Spinner/Spinner';
+
 import axios from '../../hoc/axios-instace';
 
 class ContactForm extends Component {
@@ -70,7 +72,8 @@ class ContactForm extends Component {
             }
         },
         checkingData: false,
-        formIsValid: false
+        formIsValid: false,
+        loading: false
     }
 
 
@@ -128,11 +131,17 @@ class ContactForm extends Component {
 
     checkContinueHandler = () => {
 
+        this.setState({loading: true})
+
         let send = {...this.state.inputFields}
 
         axios.post('/', send)
         .then(response => {
             console.log(response.data)
+            this.setState({
+                loading: false,
+                checkingData: false
+            })
         })
     }
     
@@ -144,17 +153,24 @@ class ContactForm extends Component {
             itemsArray.push(item)
         }
 
+        let modalContent = (
+            <ContactData
+                modalClosed={this.checkingDataHandler}
+                checkContinue={this.checkContinueHandler}
+                {...this.state.inputFields} 
+            />
+        )
+        if(this.state.loading){
+            modalContent = <Spinner/>
+        }
+
         return (
             
                 <Auxiliary>
 
                     <Modal show={this.state.checkingData}
                     modalClosed={this.checkingDataHandler}>
-                        <ContactData
-                        modalClosed={this.checkingDataHandler}
-                        checkContinue={this.checkContinueHandler}
-                        {...this.state.inputFields} 
-                        />
+                        {modalContent}
                     </Modal>
 
                     <WhiteScreen>
