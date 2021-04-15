@@ -73,3 +73,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 This project is an adaptation of another project(Projeto 1) by the company DankiCode.
 This time, the proposal is to use React in its development.
+Here, we used class-based components to manage state, an old approch to manage states. Besides, it was used Axios to handling HTTP requests and some possible errors and Components which extends from React.
